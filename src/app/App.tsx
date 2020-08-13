@@ -3,6 +3,7 @@ import './App.scss';
 
 import { Navbar, Sidebar } from './template';
 import { ProductWrapper } from './products/ProductWrapper';
+import { BasketRef } from './basket/component/BasketRef';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <ProductWrapper/>
       </main>
       <Sidebar>
-        Пока покупок никаких нет
+        <BasketRef/>
       </Sidebar>
     </div>
   );

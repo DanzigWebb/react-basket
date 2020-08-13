@@ -1,0 +1,13 @@
+@import "src/styles/vars";
+
+.basketRef {
+    padding: 2rem 0;
+}
+.basket {
+    &__item {
+        
+        .description {
+            @include flex(column)
+        }
+    }
+}

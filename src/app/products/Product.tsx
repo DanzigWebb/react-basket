@@ -1,5 +1,7 @@
 import React from 'react';
 import { IProduct } from '../basket/types';
+import { maxLength } from '../pipes/maxLenght';
+import './product.scss'
 
 export function Product(props: { product: IProduct, handleCheck: any, handleUnCheck: any }) {
 
@@ -24,7 +26,9 @@ export function Product(props: { product: IProduct, handleCheck: any, handleUnCh
   return (
     <div className="card goods__item">
       <header className="card-header">
-        <p className="card-header-title">{props.product.title}</p>
+        <p className="card-header-title">
+          {maxLength(props.product.title, 28)}
+        </p>
       </header>
       <div className="card-content">
         <img src={props.product.img} alt=""/>

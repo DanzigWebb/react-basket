@@ -1,7 +1,11 @@
 import React, { ReactNode } from 'react';
+import './sidebar.scss'
 
 export const Sidebar = (props: {children: ReactNode}) => (
   <aside className="sidebar">
-    {props.children}
+    <div className="sidebar__content">
+      <h2 className="sidebar__title">Корзина</h2>
+      {props.children}
+    </div>
   </aside>
 )

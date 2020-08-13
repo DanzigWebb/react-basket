@@ -12,7 +12,7 @@ function App() {
         <ProductWrapper/>
       </main>
       <Sidebar>
-        laa
+        Пока покупок никаких нет
       </Sidebar>
     </div>
   );

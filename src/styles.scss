@@ -1,0 +1,69 @@
+@import "~bulma";
+
+
+.goods {
+    
+    &__button {
+        margin-left: auto;
+    }
+    
+}
+
+.card-footer {
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .price {
+        font-weight: bold;
+    }
+    
+    .goods__button {
+        display: none;
+    }
+    
+    &.empty {
+        .is-basket {
+            display: none;
+        }
+        
+        .goods__button {
+            display: block;
+        }
+    }
+}
+
+.is-basket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    span {
+        font-size: 2rem;
+        padding: 3px 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s ease all;
+        &:hover {
+            cursor: pointer;
+            background-color: #eeeeee;
+        }
+    }
+    
+    b {
+        font-size: 1.4rem;
+    }
+}
+
+
+.basket {
+    max-width: 280px;
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,13 +1,19 @@
 import React from 'react';
-import './App.css';
-import { Navbar } from './template/navbar';
+import './App.scss';
+
+import { Navbar, Sidebar } from './template';
 import { ProductWrapper } from './products/ProductWrapper';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <ProductWrapper/>
+      <main>
+        <Navbar/>
+        <ProductWrapper/>
+      </main>
+      <Sidebar>
+        laa
+      </Sidebar>
     </div>
   );
 }

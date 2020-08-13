@@ -1,7 +1,26 @@
 import React from 'react';
 import { IProduct } from '../basket/types';
 
-export function Product(props: { product: IProduct }) {
+export function Product(props: { product: IProduct, handleCheck: any, handleUnCheck: any }) {
+
+  const isChecked = !!props.product.quality
+
+  const btn = () => (
+    <button
+      className="goods__button button is-success"
+      onClick={props.handleCheck}>
+      Добавить
+    </button>
+  );
+
+  const plusMinus = () => (
+    <div className="is-basket">
+      <span className="minus" onClick={props.handleUnCheck}>-</span>
+      <b className="count">{props.product.quality}</b>
+      <span className="plus" onClick={props.handleCheck}>+</span>
+    </div>
+  );
+
   return (
     <div className="card goods__item">
       <header className="card-header">
@@ -11,14 +30,13 @@ export function Product(props: { product: IProduct }) {
         <img src={props.product.img} alt=""/>
         <div className="content">{props.product.description}</div>
       </div>
-      <footer className="card-footer empty">
+      <footer className="card-footer">
         <p className="price">{props.product.price} р</p>
-        <button className="goods__button button is-success">Добавить</button>
-        <div className="is-basket">
-          <span className="minus">-</span>
-          <b className="count">1</b>
-          <span className="plus">+</span>
-        </div>
+        {
+          isChecked
+            ? plusMinus()
+            : btn()
+        }
       </footer>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { IProduct } from '../basket/types';
 import { Product } from './Product';
-import { BASKET } from '../basket/Basket';
+import { BasketService } from '../basket/BasketService';
 import './product.scss';
 
 type products = {
@@ -19,21 +19,20 @@ export class ProductWrapper extends Component<{}, products> {
 
   componentDidMount() {
     this.setState({
-      products: BASKET.state.getValue()
+      products: BasketService.state.getValue()
     });
 
-    BASKET.state.subscribe(products => {
-      console.log(products);
+    BasketService.state.subscribe(products => {
       this.setState({products});
     });
   }
 
   addProduct(product: IProduct): void {
-    BASKET.add(product);
+    BasketService.add(product);
   }
 
   removeProduct(product: IProduct): void {
-    BASKET.remove(product);
+    BasketService.remove(product);
   }
 
   render = () => (

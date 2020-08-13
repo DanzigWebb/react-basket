@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { IProduct } from '../basket/types';
 import { Product } from './Product';
 import { BasketService } from '../basket/BasketService';
-import './product.scss';
+import './Product.scss';
 
 type products = {
   products: IProduct[]

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IProduct } from '../basket/types';
 import { maxLength } from '../pipes/maxLenght';
-import './product.scss'
+import './Product.scss'
 
 export function Product(props: { product: IProduct, handleCheck: any, handleUnCheck: any }) {
 

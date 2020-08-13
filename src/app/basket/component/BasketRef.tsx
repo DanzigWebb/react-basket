@@ -16,21 +16,23 @@ export class BasketRef extends Component<{}, products> {
   }
 
   componentDidMount() {
-    this.setState({
-      products: BasketService.state.getValue()
-    });
-
     BasketService.state.subscribe(products => {
       const filtered = products.filter(item => item.quality)
       this.setState({products: filtered});
     });
   }
 
+  renderItems = () => {
+    return this.state.products.map(product => (
+      <BasketItem product={product} key={product.id} />
+    ))
+  }
+
   render = () => (
     <div className="basketRef">
-      {this.state.products.map(product => (
-        <BasketItem product={product} key={product.id} />
-      ))}
+      {
+        this.renderItems()
+      }
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IProduct } from '../types';
 import { maxLength } from '../../pipes/maxLenght';
-import './basketRef.scss'
+import './BasketRef.scss'
 
 export const BasketItem = (props: { product: IProduct }) => (
   <section className="box basket__item">
